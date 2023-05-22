@@ -1,0 +1,30 @@
+import numpy as np # linear algebra
+import pandas as pd # data processing,CSV
+file I/O (e.g.pd.read_csv)
+import matplot.pyplot as plt
+import tensorflow as tf
+from tensorflow .keras import layers,
+datasets, models
+from tensorflow.Keras.models import
+Sequential
+import os
+import cv2
+import PIL
+import seaborn as sns
+from sklearn.utils import shuffle
+from sklearn.metrics import
+confusion_matrix,classification_report
+from sklearn.model_selection import
+train_test_split
+
+from tensorflow.keras.layers import Dropout,
+Dense,Flattern,BatchNormalization,
+LeakyReLU,GlobalAveragePolling2D,
+Conv2D,MaxPool2D,MaxPooling2D
+from keras.applications.vgg16 import vgg16
+from tqdm import tqdmimport gc
+
+os.environ['TF_CPP_MN_LOG_LEVEL']= '3
+
+import warnings
+Warnings.filterwarnings("ignore")'
