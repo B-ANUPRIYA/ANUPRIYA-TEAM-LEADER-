@@ -1,0 +1,32 @@
+import requests
+
+def classify_weather(city):
+    # Use a weather API to fetch weather data for the specified city
+    api_key = "YOUR_API_KEY"
+    url = f"http://api.weatherapi.com/v1/current.json?key={api_key}&q={city}"
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        data = response.json()
+        
+        # Extract the weather condition from the API response
+        weather_condition = data["current"]["condition"]["text"]
+        
+        # Perform weather classification based on the condition
+        if "sunny" in weather_condition.lower() or "clear" in weather_condition.lower():
+            return "Sunny"
+        elif "cloudy" in weather_condition.lower() or "overcast" in weather_condition.lower():
+            return "Cloudy"
+        elif "rain" in weather_condition.lower() or "drizzle" in weather_condition.lower():
+            return "Rainy"
+        elif "snow" in weather_condition.lower():
+            return "Snowy"
+        else:
+            return "Unknown"
+    else:
+        return "Error fetching weather data"
+
+# Example usage
+city_name = "New York"
+weather_classification = classify_weather(city_name)
+print(f"The weather in {city_name} is: {weather_classification}")
